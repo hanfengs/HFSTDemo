@@ -15,6 +15,9 @@
 		6A0979BA1FCC0C830071AE65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0979B91FCC0C830071AE65 /* main.m */; };
 		6A0979C41FCC0C830071AE65 /* STDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0979C31FCC0C830071AE65 /* STDemoTests.m */; };
 		6A0979CF1FCC0C830071AE65 /* STDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0979CE1FCC0C830071AE65 /* STDemoUITests.m */; };
+		6A0979E01FCC0E0B0071AE65 /* libskegn-0-ios-1.0.9-20170817154508.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0979DE1FCC0E0A0071AE65 /* libskegn-0-ios-1.0.9-20170817154508.a */; };
+		6A0979E11FCC0E0B0071AE65 /* skegn.provision in Resources */ = {isa = PBXBuildFile; fileRef = 6A0979DF1FCC0E0A0071AE65 /* skegn.provision */; };
+		6A0979E61FCC11510071AE65 /* SKegn.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0979E51FCC11510071AE65 /* SKegn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		6A0979CA1FCC0C830071AE65 /* STDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0979CE1FCC0C830071AE65 /* STDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDemoUITests.m; sourceTree = "<group>"; };
 		6A0979D01FCC0C830071AE65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A0979DC1FCC0CD60071AE65 /* STDemo-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STDemo-PrefixHeader.pch"; sourceTree = "<group>"; };
+		6A0979DE1FCC0E0A0071AE65 /* libskegn-0-ios-1.0.9-20170817154508.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libskegn-0-ios-1.0.9-20170817154508.a"; sourceTree = "<group>"; };
+		6A0979DF1FCC0E0A0071AE65 /* skegn.provision */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skegn.provision; sourceTree = "<group>"; };
+		6A0979E31FCC0E4B0071AE65 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6A0979E41FCC11510071AE65 /* SKegn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKegn.h; sourceTree = "<group>"; };
+		6A0979E51FCC11510071AE65 /* SKegn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKegn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A0979E01FCC0E0B0071AE65 /* libskegn-0-ios-1.0.9-20170817154508.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +95,7 @@
 				6A0979C21FCC0C830071AE65 /* STDemoTests */,
 				6A0979CD1FCC0C830071AE65 /* STDemoUITests */,
 				6A0979A81FCC0C830071AE65 /* Products */,
+				6A0979E21FCC0E4B0071AE65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,15 +112,19 @@
 		6A0979A91FCC0C830071AE65 /* STDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6A0979DD1FCC0E0A0071AE65 /* skegn */,
 				6A0979AA1FCC0C830071AE65 /* AppDelegate.h */,
 				6A0979AB1FCC0C830071AE65 /* AppDelegate.m */,
 				6A0979AD1FCC0C830071AE65 /* ViewController.h */,
 				6A0979AE1FCC0C830071AE65 /* ViewController.m */,
+				6A0979E41FCC11510071AE65 /* SKegn.h */,
+				6A0979E51FCC11510071AE65 /* SKegn.m */,
 				6A0979B01FCC0C830071AE65 /* Main.storyboard */,
 				6A0979B31FCC0C830071AE65 /* Assets.xcassets */,
 				6A0979B51FCC0C830071AE65 /* LaunchScreen.storyboard */,
 				6A0979B81FCC0C830071AE65 /* Info.plist */,
 				6A0979B91FCC0C830071AE65 /* main.m */,
+				6A0979DC1FCC0CD60071AE65 /* STDemo-PrefixHeader.pch */,
 			);
 			path = STDemo;
 			sourceTree = "<group>";
@@ -130,6 +145,23 @@
 				6A0979D01FCC0C830071AE65 /* Info.plist */,
 			);
 			path = STDemoUITests;
+			sourceTree = "<group>";
+		};
+		6A0979DD1FCC0E0A0071AE65 /* skegn */ = {
+			isa = PBXGroup;
+			children = (
+				6A0979DE1FCC0E0A0071AE65 /* libskegn-0-ios-1.0.9-20170817154508.a */,
+				6A0979DF1FCC0E0A0071AE65 /* skegn.provision */,
+			);
+			path = skegn;
+			sourceTree = "<group>";
+		};
+		6A0979E21FCC0E4B0071AE65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A0979E31FCC0E4B0071AE65 /* CFNetwork.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +272,7 @@
 			files = (
 				6A0979B71FCC0C830071AE65 /* LaunchScreen.storyboard in Resources */,
 				6A0979B41FCC0C830071AE65 /* Assets.xcassets in Resources */,
+				6A0979E11FCC0E0B0071AE65 /* skegn.provision in Resources */,
 				6A0979B21FCC0C830071AE65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +300,7 @@
 			files = (
 				6A0979AF1FCC0C830071AE65 /* ViewController.m in Sources */,
 				6A0979BA1FCC0C830071AE65 /* main.m in Sources */,
+				6A0979E61FCC11510071AE65 /* SKegn.m in Sources */,
 				6A0979AC1FCC0C830071AE65 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,8 +466,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39R6VHSDLS;
+				GCC_PREFIX_HEADER = "STDemo/STDemo-PrefixHeader.pch";
 				INFOPLIST_FILE = STDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/STDemo/skegn",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = zzuli.cn.STDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -446,8 +485,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39R6VHSDLS;
+				GCC_PREFIX_HEADER = "STDemo/STDemo-PrefixHeader.pch";
 				INFOPLIST_FILE = STDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/STDemo/skegn",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = zzuli.cn.STDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
