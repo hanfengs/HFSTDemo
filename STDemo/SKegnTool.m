@@ -1,18 +1,18 @@
 //
-//  SKegn.m
+//  SKegnTool.m
 //  STDemo
 //
-//  Created by hanfeng on 2017/11/27.
+//  Created by hanfeng on 2017/11/28.
 //  Copyright © 2017年 hanfeng. All rights reserved.
 //
 
-#import "SKegn.h"
+#import "SKegnTool.h"
 
-@implementation SKegn
+@implementation SKegnTool
 
 + (instancetype)shareSKegn{
     
-    static SKegn *shareSKegn;
+    static SKegnTool *shareSKegn;
     
     static dispatch_once_t onceToken;
     

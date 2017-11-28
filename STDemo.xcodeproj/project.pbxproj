@@ -17,7 +17,9 @@
 		6A0979CF1FCC0C830071AE65 /* STDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0979CE1FCC0C830071AE65 /* STDemoUITests.m */; };
 		6A0979E01FCC0E0B0071AE65 /* libskegn-0-ios-1.0.9-20170817154508.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0979DE1FCC0E0A0071AE65 /* libskegn-0-ios-1.0.9-20170817154508.a */; };
 		6A0979E11FCC0E0B0071AE65 /* skegn.provision in Resources */ = {isa = PBXBuildFile; fileRef = 6A0979DF1FCC0E0A0071AE65 /* skegn.provision */; };
-		6A0979E61FCC11510071AE65 /* SKegn.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0979E51FCC11510071AE65 /* SKegn.m */; };
+		6A0979ED1FCD3D1C0071AE65 /* aiplayer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A0979E81FCD3D1C0071AE65 /* aiplayer.c */; };
+		6A0979EE1FCD3D1C0071AE65 /* airecorder.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A0979EA1FCD3D1C0071AE65 /* airecorder.c */; };
+		6A0979F21FCD42440071AE65 /* SKegnTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0979F11FCD42440071AE65 /* SKegnTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +60,14 @@
 		6A0979DE1FCC0E0A0071AE65 /* libskegn-0-ios-1.0.9-20170817154508.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libskegn-0-ios-1.0.9-20170817154508.a"; sourceTree = "<group>"; };
 		6A0979DF1FCC0E0A0071AE65 /* skegn.provision */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skegn.provision; sourceTree = "<group>"; };
 		6A0979E31FCC0E4B0071AE65 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		6A0979E41FCC11510071AE65 /* SKegn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKegn.h; sourceTree = "<group>"; };
-		6A0979E51FCC11510071AE65 /* SKegn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKegn.m; sourceTree = "<group>"; };
+		6A0979E81FCD3D1C0071AE65 /* aiplayer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aiplayer.c; sourceTree = "<group>"; };
+		6A0979E91FCD3D1C0071AE65 /* aiplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aiplayer.h; sourceTree = "<group>"; };
+		6A0979EA1FCD3D1C0071AE65 /* airecorder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = airecorder.c; sourceTree = "<group>"; };
+		6A0979EB1FCD3D1C0071AE65 /* airecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = airecorder.h; sourceTree = "<group>"; };
+		6A0979EC1FCD3D1C0071AE65 /* wavehdr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavehdr.h; sourceTree = "<group>"; };
+		6A0979EF1FCD3D690071AE65 /* skegn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skegn.h; sourceTree = "<group>"; };
+		6A0979F01FCD42440071AE65 /* SKegnTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKegnTool.h; sourceTree = "<group>"; };
+		6A0979F11FCD42440071AE65 /* SKegnTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKegnTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,13 +120,14 @@
 		6A0979A91FCC0C830071AE65 /* STDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6A0979E71FCD3D1C0071AE65 /* audio */,
 				6A0979DD1FCC0E0A0071AE65 /* skegn */,
 				6A0979AA1FCC0C830071AE65 /* AppDelegate.h */,
 				6A0979AB1FCC0C830071AE65 /* AppDelegate.m */,
 				6A0979AD1FCC0C830071AE65 /* ViewController.h */,
 				6A0979AE1FCC0C830071AE65 /* ViewController.m */,
-				6A0979E41FCC11510071AE65 /* SKegn.h */,
-				6A0979E51FCC11510071AE65 /* SKegn.m */,
+				6A0979F01FCD42440071AE65 /* SKegnTool.h */,
+				6A0979F11FCD42440071AE65 /* SKegnTool.m */,
 				6A0979B01FCC0C830071AE65 /* Main.storyboard */,
 				6A0979B31FCC0C830071AE65 /* Assets.xcassets */,
 				6A0979B51FCC0C830071AE65 /* LaunchScreen.storyboard */,
@@ -150,6 +159,7 @@
 		6A0979DD1FCC0E0A0071AE65 /* skegn */ = {
 			isa = PBXGroup;
 			children = (
+				6A0979EF1FCD3D690071AE65 /* skegn.h */,
 				6A0979DE1FCC0E0A0071AE65 /* libskegn-0-ios-1.0.9-20170817154508.a */,
 				6A0979DF1FCC0E0A0071AE65 /* skegn.provision */,
 			);
@@ -162,6 +172,18 @@
 				6A0979E31FCC0E4B0071AE65 /* CFNetwork.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A0979E71FCD3D1C0071AE65 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				6A0979E81FCD3D1C0071AE65 /* aiplayer.c */,
+				6A0979E91FCD3D1C0071AE65 /* aiplayer.h */,
+				6A0979EA1FCD3D1C0071AE65 /* airecorder.c */,
+				6A0979EB1FCD3D1C0071AE65 /* airecorder.h */,
+				6A0979EC1FCD3D1C0071AE65 /* wavehdr.h */,
+			);
+			path = audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +321,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A0979AF1FCC0C830071AE65 /* ViewController.m in Sources */,
+				6A0979F21FCD42440071AE65 /* SKegnTool.m in Sources */,
 				6A0979BA1FCC0C830071AE65 /* main.m in Sources */,
-				6A0979E61FCC11510071AE65 /* SKegn.m in Sources */,
+				6A0979EE1FCD3D1C0071AE65 /* airecorder.c in Sources */,
+				6A0979ED1FCD3D1C0071AE65 /* aiplayer.c in Sources */,
 				6A0979AC1FCC0C830071AE65 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
