@@ -7,8 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#include "airecorder.h"
+#include "aiplayer.h"
+#include "skegn.h"
 
-@interface SKegnTool : NSObject
+@interface SKegnTool : NSObject{
+    
+    struct airecorder * recorder;
+    struct aiplayer * player;
+    struct skegn * engine;
+}
 
 + (instancetype)shareSKegn;
 

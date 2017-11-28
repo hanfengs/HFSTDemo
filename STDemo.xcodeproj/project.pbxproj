@@ -20,6 +20,9 @@
 		6A0979ED1FCD3D1C0071AE65 /* aiplayer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A0979E81FCD3D1C0071AE65 /* aiplayer.c */; };
 		6A0979EE1FCD3D1C0071AE65 /* airecorder.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A0979EA1FCD3D1C0071AE65 /* airecorder.c */; };
 		6A0979F21FCD42440071AE65 /* SKegnTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0979F11FCD42440071AE65 /* SKegnTool.m */; };
+		6A0979FD1FCD522B0071AE65 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0979FB1FCD4ECF0071AE65 /* Accelerate.framework */; };
+		6A0979FE1FCD52380071AE65 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0979F61FCD4DFF0071AE65 /* SystemConfiguration.framework */; };
+		6A097A011FCD55CA0071AE65 /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A097A001FCD55CA0071AE65 /* NSDictionary+JSON.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,18 @@
 		6A0979EF1FCD3D690071AE65 /* skegn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skegn.h; sourceTree = "<group>"; };
 		6A0979F01FCD42440071AE65 /* SKegnTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKegnTool.h; sourceTree = "<group>"; };
 		6A0979F11FCD42440071AE65 /* SKegnTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKegnTool.m; sourceTree = "<group>"; };
+		6A0979F31FCD4D8E0071AE65 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		6A0979F41FCD4DD80071AE65 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6A0979F51FCD4DEB0071AE65 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6A0979F61FCD4DFF0071AE65 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6A0979F71FCD4E100071AE65 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6A0979F81FCD4E220071AE65 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6A0979F91FCD4E340071AE65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6A0979FA1FCD4E450071AE65 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6A0979FB1FCD4ECF0071AE65 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		6A0979FC1FCD50910071AE65 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		6A0979FF1FCD55CA0071AE65 /* NSDictionary+JSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSON.h"; sourceTree = "<group>"; };
+		6A097A001FCD55CA0071AE65 /* NSDictionary+JSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSON.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A0979FE1FCD52380071AE65 /* SystemConfiguration.framework in Frameworks */,
+				6A0979FD1FCD522B0071AE65 /* Accelerate.framework in Frameworks */,
 				6A0979E01FCC0E0B0071AE65 /* libskegn-0-ios-1.0.9-20170817154508.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +145,8 @@
 				6A0979AE1FCC0C830071AE65 /* ViewController.m */,
 				6A0979F01FCD42440071AE65 /* SKegnTool.h */,
 				6A0979F11FCD42440071AE65 /* SKegnTool.m */,
+				6A0979FF1FCD55CA0071AE65 /* NSDictionary+JSON.h */,
+				6A097A001FCD55CA0071AE65 /* NSDictionary+JSON.m */,
 				6A0979B01FCC0C830071AE65 /* Main.storyboard */,
 				6A0979B31FCC0C830071AE65 /* Assets.xcassets */,
 				6A0979B51FCC0C830071AE65 /* LaunchScreen.storyboard */,
@@ -169,6 +188,16 @@
 		6A0979E21FCC0E4B0071AE65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6A0979FC1FCD50910071AE65 /* libz.tbd */,
+				6A0979F31FCD4D8E0071AE65 /* libz.1.tbd */,
+				6A0979FB1FCD4ECF0071AE65 /* Accelerate.framework */,
+				6A0979FA1FCD4E450071AE65 /* CoreGraphics.framework */,
+				6A0979F91FCD4E340071AE65 /* Foundation.framework */,
+				6A0979F81FCD4E220071AE65 /* UIKit.framework */,
+				6A0979F71FCD4E100071AE65 /* Security.framework */,
+				6A0979F61FCD4DFF0071AE65 /* SystemConfiguration.framework */,
+				6A0979F51FCD4DEB0071AE65 /* AVFoundation.framework */,
+				6A0979F41FCD4DD80071AE65 /* AudioToolbox.framework */,
 				6A0979E31FCC0E4B0071AE65 /* CFNetwork.framework */,
 			);
 			name = Frameworks;
@@ -323,6 +352,7 @@
 				6A0979AF1FCC0C830071AE65 /* ViewController.m in Sources */,
 				6A0979F21FCD42440071AE65 /* SKegnTool.m in Sources */,
 				6A0979BA1FCC0C830071AE65 /* main.m in Sources */,
+				6A097A011FCD55CA0071AE65 /* NSDictionary+JSON.m in Sources */,
 				6A0979EE1FCD3D1C0071AE65 /* airecorder.c in Sources */,
 				6A0979ED1FCD3D1C0071AE65 /* aiplayer.c in Sources */,
 				6A0979AC1FCC0C830071AE65 /* AppDelegate.m in Sources */,

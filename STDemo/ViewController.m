@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SKegnTool.h"
 
 @interface ViewController ()
 
@@ -21,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [SKegnTool shareSKegn];
     
 }
 - (IBAction)clickBtn_record:(UIButton *)sender {
