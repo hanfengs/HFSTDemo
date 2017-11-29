@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *tv_result;
 @property (weak, nonatomic) IBOutlet UIButton *btn_record;
 
+@property (nonatomic, copy) NSString *result;
+
 @end
 
 @implementation ViewController
@@ -22,11 +24,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [SKegnTool shareSKegn];
+    self.btn_record.selected = NO;
+    [[SKegnTool shareSKegn] initEngine];
+    
+    [SKegnTool shareSKegn].block_result = ^(NSString *data) {
+        
+        self.result = data;
+    };
     
 }
+
+- (void)setResult:(NSString *)result{
+    _result = result;
+    
+    self.tv_result.text = result;
+}
+
 - (IBAction)clickBtn_record:(UIButton *)sender {
     
+    sender.selected = !sender.selected;
+    
+    if (sender.selected) {
+        [[SKegnTool shareSKegn] startEngine];
+    }else{
+        [[SKegnTool shareSKegn] stopEngine];
+    }
     
 }
 

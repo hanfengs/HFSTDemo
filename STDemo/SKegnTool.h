@@ -11,13 +11,18 @@
 #include "aiplayer.h"
 #include "skegn.h"
 
-@interface SKegnTool : NSObject{
-    
-    struct airecorder * recorder;
-    struct aiplayer * player;
-    struct skegn * engine;
-}
+typedef void(^result_block)(NSString *);
+
+@interface SKegnTool : NSObject
+
+@property (nonatomic, copy) result_block block_result;
 
 + (instancetype)shareSKegn;
+
+- (void)initEngine;
+
+- (void)startEngine;
+- (void)stopEngine;
+
 
 @end

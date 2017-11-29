@@ -8,8 +8,54 @@
 
 #import "SKegnTool.h"
 #import "NSDictionary+JSON.h"
+#import <AVFoundation/AVFoundation.h>
+
+@interface SKegnTool (){
+    
+    struct airecorder * recorder;
+    struct aiplayer * player;
+    struct skegn * engine;
+}
+
+@end
 
 @implementation SKegnTool
+
+
+static int _skegn_callback(const void *usrdata, const char *id, int type, const void *message, int size){
+    
+    if (type == SKEGN_MESSAGE_TYPE_JSON) {
+        
+        
+        /* received score result in json formatting */
+//        [(__bridge ViewController *)usrdata performSelectorOnMainThread:@selector(showResult:) withObject:[[NSString alloc] initWithUTF8String:(char *)message] waitUntilDone:NO];
+        
+        NSString *result = [[NSString alloc] initWithUTF8String:(char *)message];
+        NSData *data = [result dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSString *res = [dict toReadableJSONString];
+        
+        NSLog(@"%@",result);
+        
+        SKegnTool *shareTool = (__bridge SKegnTool *)usrdata;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (shareTool.block_result) {                
+                shareTool.block_result(res);
+            }
+        });
+        
+    }
+    return 0;
+}
+
+static int _recorder_callback(const void * usrdata, const void * data, int size){
+    
+    printf("feed: %d\n", size);
+    return skegn_feed((struct skegn*) usrdata, data, size);
+}
+
 
 + (instancetype)shareSKegn{
     
@@ -21,13 +67,13 @@
         
         shareSKegn = [[self alloc] init];
         
-        [shareSKegn initAll];
+//        [shareSKegn initAll];
         
     });
     return shareSKegn;
 }
 
-- (void)initAll{
+- (void)initEngine{
     
     /*
      1;用字典拼出参数
@@ -43,6 +89,57 @@
     
     recorder = airecorder_new();
     player = aiplayer_new();
+    
+}
+
+- (void)startEngine{
+    int rv = 0;
+    
+    /*
+     "{"coreProvideType":"cloud","app": {"userId": "this-is-user-id"}, "audio": {"audioType": "wav", "sampleRate": 16000, "channel": 1, "sampleBytes": 2}, "request" : {"coreType": "word.eval", "refText": "school", "getParam": 0, "dict_type":"KK", "phoneme_output": 1}}}"
+     
+     "{"coreProvideType":"cloud","app": {"userId": "this-is-user-id"}, "audio": {"audioType": "wav", "sampleRate": 16000, "channel": 1, "sampleBytes": 2}, "request" : {"coreType": "sent.eval", "refText": "where are you from?", "getParam": 0, "dict_type":"KK", "phoneme_output": 0}}}"
+
+     */
+    NSDictionary *para = @{@"coreProvideType":@"cloud", @"app":@{@"userId":@"this-is-user-id"}, @"audio":@{@"audioType":@"wav", @"sampleRate":@16000, @"channel":@1, @"sampleBytes":@2},@"request":@{@"coreType":@"word.eval", @"refText": @"fine", @"getParam":@1, @"phoneme_output":@1, @"attachAudioUrl":@1}};
+    
+    NSString *param = [para toJSONString];
+//    NSString *requestId = @"1";
+    char record_id[64] = {0};
+    
+    
+    rv = skegn_start(engine, [param UTF8String], record_id, (skegn_callback)_skegn_callback, (__bridge const void *)(self));
+    
+    if (rv) {
+        NSLog(@"engine start 失败%d", rv);
+        int res = skegn_stop(engine);
+        NSLog(@"失败原因%d", res);
+        
+        return;
+    }
+    
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    
+    NSString *requestId = [[NSString alloc] initWithCString:record_id encoding:NSUTF8StringEncoding];
+    NSString *path = [NSString stringWithFormat:@"%@/Documents/record/%@.wav", NSHomeDirectory(), requestId];
+    NSLog(@"%@",path);
+    
+    if ((rv = airecorder_start(recorder, [path UTF8String], _recorder_callback, engine, 100)) != 0) {
+        
+        NSLog(@"airecorder_start 失败%d", rv);
+        return;
+    }
+    
+    
+    
+    
+}
+
+- (void)stopEngine{
+    
+    airecorder_stop(recorder);
+    skegn_stop(engine);
     
 }
 

@@ -28,29 +28,31 @@
                                     <segment title="句子测评"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Po7-ey-Xwp">
-                                <rect key="frame" x="20" y="205" width="50" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Po7-ey-Xwp">
+                                <rect key="frame" x="20" y="205" width="60" height="40"/>
+                                <color key="backgroundColor" red="0.44705882349999998" green="0.76862745099999996" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="1HV-yw-dXE"/>
-                                    <constraint firstAttribute="height" constant="30" id="rWD-Yr-uaK"/>
+                                    <constraint firstAttribute="width" constant="60" id="OcW-W8-XXv"/>
+                                    <constraint firstAttribute="height" constant="40" id="nxH-9j-Oc8"/>
                                 </constraints>
                                 <state key="normal" title="record"/>
+                                <state key="selected" title="stop"/>
                                 <connections>
                                     <action selector="clickBtn_record:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qDI-U3-4pM"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="school" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m04-4o-Iz7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="评测结果" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xfh-hP-ZZS">
+                                <rect key="frame" x="20" y="270" width="335" height="377"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="fine" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m04-4o-Iz7">
                                 <rect key="frame" x="20" y="90" width="335" height="90"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="bwN-Ke-Vgp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="评测结果" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xfh-hP-ZZS">
-                                <rect key="frame" x="20" y="260" width="335" height="387"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -60,12 +62,12 @@
                             <constraint firstItem="DaV-R4-kxN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="4cb-C1-cFf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DaV-R4-kxN" secondAttribute="trailing" constant="20" id="9bu-WI-mxV"/>
                             <constraint firstItem="DaV-R4-kxN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Cda-Yb-TMc"/>
-                            <constraint firstItem="Xfh-hP-ZZS" firstAttribute="top" secondItem="Po7-ey-Xwp" secondAttribute="bottom" constant="25" id="Gql-4G-exn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m04-4o-Iz7" secondAttribute="trailing" constant="20" id="LHN-fp-a1G"/>
-                            <constraint firstItem="Po7-ey-Xwp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NxE-rB-gO9"/>
                             <constraint firstItem="m04-4o-Iz7" firstAttribute="top" secondItem="DaV-R4-kxN" secondAttribute="bottom" constant="20" id="TEU-nl-LJ2"/>
-                            <constraint firstItem="Po7-ey-Xwp" firstAttribute="top" secondItem="m04-4o-Iz7" secondAttribute="bottom" constant="25" id="Yav-FZ-huo"/>
+                            <constraint firstItem="Xfh-hP-ZZS" firstAttribute="top" secondItem="Po7-ey-Xwp" secondAttribute="bottom" constant="25" id="Wvr-68-teN"/>
                             <constraint firstItem="Xfh-hP-ZZS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aiH-65-eN7"/>
+                            <constraint firstItem="Po7-ey-Xwp" firstAttribute="top" secondItem="m04-4o-Iz7" secondAttribute="bottom" constant="25" id="axA-xg-P7j"/>
+                            <constraint firstItem="Po7-ey-Xwp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fYP-co-r4W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xfh-hP-ZZS" secondAttribute="trailing" constant="20" id="nvh-GX-3sv"/>
                             <constraint firstItem="m04-4o-Iz7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vIu-6Y-qqZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xfh-hP-ZZS" secondAttribute="bottom" constant="20" id="xVD-Kn-QtC"/>
