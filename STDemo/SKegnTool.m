@@ -123,16 +123,14 @@ static int _recorder_callback(const void * usrdata, const void * data, int size)
     
     NSString *requestId = [[NSString alloc] initWithCString:record_id encoding:NSUTF8StringEncoding];
     NSString *path = [NSString stringWithFormat:@"%@/Documents/record/%@.wav", NSHomeDirectory(), requestId];
-    NSLog(@"%@",path);
+    NSLog(@"=========%@",path);
+    
     
     if ((rv = airecorder_start(recorder, [path UTF8String], _recorder_callback, engine, 100)) != 0) {
         
         NSLog(@"airecorder_start 失败%d", rv);
         return;
     }
-    
-    
-    
     
 }
 
