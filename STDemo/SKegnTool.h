@@ -29,7 +29,7 @@ typedef void(^result_block)(NSString *);
 
 - (void)initEngine;
 
-- (void)startEngineWithRefText:(NSString *)refText;
+- (void)startEngineWithRefText:(NSString *)refText coreType:(CoreType)type;
 
 - (void)stopEngine;
 

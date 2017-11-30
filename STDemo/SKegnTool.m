@@ -92,7 +92,20 @@ static int _recorder_callback(const void * usrdata, const void * data, int size)
     
 }
 
-- (void)startEngineWithRefText:(NSString *)refText{
+- (void)startEngineWithRefText:(NSString *)refText coreType:(CoreType)type{
+    
+    NSString *coreType;
+    switch (type) {
+        case 0:
+            coreType = @"word.eval";
+            break;
+        case 1:
+            coreType = @"sent.eval";
+            break;
+            
+        default:
+            break;
+    }
     int rv = 0;
     
     /*
@@ -101,7 +114,7 @@ static int _recorder_callback(const void * usrdata, const void * data, int size)
      "{"coreProvideType":"cloud","app": {"userId": "this-is-user-id"}, "audio": {"audioType": "wav", "sampleRate": 16000, "channel": 1, "sampleBytes": 2}, "request" : {"coreType": "sent.eval", "refText": "where are you from?", "getParam": 0, "dict_type":"KK", "phoneme_output": 0}}}"
 
      */
-    NSDictionary *para = @{@"coreProvideType":@"cloud", @"app":@{@"userId":@"this-is-user-id"}, @"audio":@{@"audioType":@"wav", @"sampleRate":@16000, @"channel":@1, @"sampleBytes":@2},@"request":@{@"coreType":@"word.eval", @"refText": refText, @"getParam":@1, @"phoneme_output":@1, @"attachAudioUrl":@1}};
+    NSDictionary *para = @{@"coreProvideType":@"cloud", @"app":@{@"userId":@"this-is-user-id"}, @"audio":@{@"audioType":@"wav", @"sampleRate":@16000, @"channel":@1, @"sampleBytes":@2},@"request":@{@"coreType":coreType, @"refText": refText, @"getParam":@1, @"phoneme_output":@1, @"attachAudioUrl":@1}};
     
     NSString *param = [para toJSONString];
 //    NSString *requestId = @"1";
