@@ -92,7 +92,7 @@ static int _recorder_callback(const void * usrdata, const void * data, int size)
     
 }
 
-- (void)startEngine{
+- (void)startEngineWithRefText:(NSString *)refText{
     int rv = 0;
     
     /*
@@ -101,7 +101,7 @@ static int _recorder_callback(const void * usrdata, const void * data, int size)
      "{"coreProvideType":"cloud","app": {"userId": "this-is-user-id"}, "audio": {"audioType": "wav", "sampleRate": 16000, "channel": 1, "sampleBytes": 2}, "request" : {"coreType": "sent.eval", "refText": "where are you from?", "getParam": 0, "dict_type":"KK", "phoneme_output": 0}}}"
 
      */
-    NSDictionary *para = @{@"coreProvideType":@"cloud", @"app":@{@"userId":@"this-is-user-id"}, @"audio":@{@"audioType":@"wav", @"sampleRate":@16000, @"channel":@1, @"sampleBytes":@2},@"request":@{@"coreType":@"word.eval", @"refText": @"fine", @"getParam":@1, @"phoneme_output":@1, @"attachAudioUrl":@1}};
+    NSDictionary *para = @{@"coreProvideType":@"cloud", @"app":@{@"userId":@"this-is-user-id"}, @"audio":@{@"audioType":@"wav", @"sampleRate":@16000, @"channel":@1, @"sampleBytes":@2},@"request":@{@"coreType":@"word.eval", @"refText": refText, @"getParam":@1, @"phoneme_output":@1, @"attachAudioUrl":@1}};
     
     NSString *param = [para toJSONString];
 //    NSString *requestId = @"1";
@@ -141,4 +141,22 @@ static int _recorder_callback(const void * usrdata, const void * data, int size)
     
 }
 
+- (void)dealloc{
+    
+    if (engine) {
+        skegn_delete(engine);
+        engine = NULL;
+    }
+    
+    if (player) {
+        aiplayer_delete(player);
+        player = NULL;
+    }
+    
+    if (recorder) {
+        airecorder_delete(recorder);
+        recorder = NULL;
+    }
+    
+}
 @end

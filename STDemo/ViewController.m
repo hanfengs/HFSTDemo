@@ -45,7 +45,7 @@
     sender.selected = !sender.selected;
     
     if (sender.selected) {
-        [[SKegnTool shareSKegn] startEngine];
+        [[SKegnTool shareSKegn] startEngineWithRefText:self.tv_input.text];
     }else{
         [[SKegnTool shareSKegn] stopEngine];
     }

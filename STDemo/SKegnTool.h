@@ -11,6 +11,14 @@
 #include "aiplayer.h"
 #include "skegn.h"
 
+typedef NS_ENUM(NSInteger, CoreType) {
+    CoreType_word_eval,
+    CoreType_sent_eval,
+    CoreType_para_eval,
+    CoreType_achoice_eval,
+    CoreType_align_eval,
+};
+
 typedef void(^result_block)(NSString *);
 
 @interface SKegnTool : NSObject
@@ -21,7 +29,8 @@ typedef void(^result_block)(NSString *);
 
 - (void)initEngine;
 
-- (void)startEngine;
+- (void)startEngineWithRefText:(NSString *)refText;
+
 - (void)stopEngine;
 
 
