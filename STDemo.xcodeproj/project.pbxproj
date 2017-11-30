@@ -23,6 +23,9 @@
 		6A0979FD1FCD522B0071AE65 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0979FB1FCD4ECF0071AE65 /* Accelerate.framework */; };
 		6A0979FE1FCD52380071AE65 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0979F61FCD4DFF0071AE65 /* SystemConfiguration.framework */; };
 		6A097A011FCD55CA0071AE65 /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A097A001FCD55CA0071AE65 /* NSDictionary+JSON.m */; };
+		6A097A081FCFB1B40071AE65 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A097A041FCFB1B40071AE65 /* NSObject+YYModel.m */; };
+		6A097A091FCFB1B40071AE65 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A097A061FCFB1B40071AE65 /* YYClassInfo.m */; };
+		6A097A0C1FCFB2B00071AE65 /* SKegnResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A097A0B1FCFB2B00071AE65 /* SKegnResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,13 @@
 		6A0979FC1FCD50910071AE65 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		6A0979FF1FCD55CA0071AE65 /* NSDictionary+JSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSON.h"; sourceTree = "<group>"; };
 		6A097A001FCD55CA0071AE65 /* NSDictionary+JSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSON.m"; sourceTree = "<group>"; };
+		6A097A031FCFB1B40071AE65 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		6A097A041FCFB1B40071AE65 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		6A097A051FCFB1B40071AE65 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		6A097A061FCFB1B40071AE65 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		6A097A071FCFB1B40071AE65 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		6A097A0A1FCFB2B00071AE65 /* SKegnResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKegnResult.h; sourceTree = "<group>"; };
+		6A097A0B1FCFB2B00071AE65 /* SKegnResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKegnResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,12 +147,15 @@
 		6A0979A91FCC0C830071AE65 /* STDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6A097A021FCFB1B40071AE65 /* YYModel */,
 				6A0979E71FCD3D1C0071AE65 /* audio */,
 				6A0979DD1FCC0E0A0071AE65 /* skegn */,
 				6A0979AA1FCC0C830071AE65 /* AppDelegate.h */,
 				6A0979AB1FCC0C830071AE65 /* AppDelegate.m */,
 				6A0979AD1FCC0C830071AE65 /* ViewController.h */,
 				6A0979AE1FCC0C830071AE65 /* ViewController.m */,
+				6A097A0A1FCFB2B00071AE65 /* SKegnResult.h */,
+				6A097A0B1FCFB2B00071AE65 /* SKegnResult.m */,
 				6A0979F01FCD42440071AE65 /* SKegnTool.h */,
 				6A0979F11FCD42440071AE65 /* SKegnTool.m */,
 				6A0979FF1FCD55CA0071AE65 /* NSDictionary+JSON.h */,
@@ -213,6 +226,18 @@
 				6A0979EC1FCD3D1C0071AE65 /* wavehdr.h */,
 			);
 			path = audio;
+			sourceTree = "<group>";
+		};
+		6A097A021FCFB1B40071AE65 /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				6A097A031FCFB1B40071AE65 /* NSObject+YYModel.h */,
+				6A097A041FCFB1B40071AE65 /* NSObject+YYModel.m */,
+				6A097A051FCFB1B40071AE65 /* YYClassInfo.h */,
+				6A097A061FCFB1B40071AE65 /* YYClassInfo.m */,
+				6A097A071FCFB1B40071AE65 /* YYModel.h */,
+			);
+			path = YYModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,11 +375,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A0979AF1FCC0C830071AE65 /* ViewController.m in Sources */,
+				6A097A0C1FCFB2B00071AE65 /* SKegnResult.m in Sources */,
 				6A0979F21FCD42440071AE65 /* SKegnTool.m in Sources */,
 				6A0979BA1FCC0C830071AE65 /* main.m in Sources */,
+				6A097A081FCFB1B40071AE65 /* NSObject+YYModel.m in Sources */,
 				6A097A011FCD55CA0071AE65 /* NSDictionary+JSON.m in Sources */,
 				6A0979EE1FCD3D1C0071AE65 /* airecorder.c in Sources */,
 				6A0979ED1FCD3D1C0071AE65 /* aiplayer.c in Sources */,
+				6A097A091FCFB1B40071AE65 /* YYClassInfo.m in Sources */,
 				6A0979AC1FCC0C830071AE65 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

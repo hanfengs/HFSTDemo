@@ -31,18 +31,23 @@ static int _skegn_callback(const void *usrdata, const char *id, int type, const 
 //        [(__bridge ViewController *)usrdata performSelectorOnMainThread:@selector(showResult:) withObject:[[NSString alloc] initWithUTF8String:(char *)message] waitUntilDone:NO];
         
         NSString *result = [[NSString alloc] initWithUTF8String:(char *)message];
+        NSLog(@"%@",result);
+        
         NSData *data = [result dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        NSString *res = [dict toReadableJSONString];
         
-        NSLog(@"%@",result);
+        NSDictionary *resultDict = [dict objectForKey:@"result"];
+        NSString *overall = [resultDict objectForKey:@"overall"];
+        NSString *score = [NSString stringWithFormat:@"总分：%@\n", overall];
+        
+        NSString *res = [dict toReadableJSONString];
         
         SKegnTool *shareTool = (__bridge SKegnTool *)usrdata;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (shareTool.block_result) {                
-                shareTool.block_result(res);
+                shareTool.block_result([score stringByAppendingString:res]);
             }
         });
         
@@ -171,5 +176,15 @@ static int _recorder_callback(const void * usrdata, const void * data, int size)
         recorder = NULL;
     }
     
+}
+
+#pragma mark-
+
+- (NSString *)overall:(NSDictionary *)dic{
+    
+    NSDictionary *result = [dic objectForKey:@"result"];
+    NSString *overall = [result objectForKey:@"overall"];
+    
+    return [NSString stringWithFormat:@"总分：%@\n", overall];
 }
 @end
