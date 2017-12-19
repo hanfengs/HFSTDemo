@@ -72,6 +72,7 @@ static int _recorder_callback(const void * usrdata, const void * data, int size)
         
         shareSKegn = [[self alloc] init];
         
+         [[NSFileManager defaultManager] createDirectoryAtPath:[NSHomeDirectory() stringByAppendingFormat:@"/Documents/record"] withIntermediateDirectories:YES attributes:nil error:nil];
 //        [shareSKegn initAll];
         
     });

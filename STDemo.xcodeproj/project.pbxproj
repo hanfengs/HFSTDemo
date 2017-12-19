@@ -555,6 +555,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/STDemo/skegn",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = zzuli.cn.STDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -574,6 +575,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/STDemo/skegn",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = zzuli.cn.STDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
